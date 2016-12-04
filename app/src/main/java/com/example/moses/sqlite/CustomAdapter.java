@@ -49,13 +49,13 @@ public class CustomAdapter extends BaseAdapter {
         View Rowview = layoutinflater.inflate(R.layout.custom_row,null);
 
         TextView txtid = (TextView)Rowview.findViewById(R.id.txtid);
-        txtid.setText(String.valueOf(pid.get(i)));
+        txtid.setText("Product ID : "+String.valueOf(pid.get(i)));
 
         TextView txtnama = (TextView)Rowview.findViewById(R.id.txtnama);
         txtnama.setText(nama.get(i));
 
         TextView txtharga = (TextView)Rowview.findViewById(R.id.txtharga);
-        txtharga.setText(harga.get(i));
+        txtharga.setText("Rp. "+harga.get(i));
 
         ImageView gambar = (ImageView)Rowview.findViewById(R.id.img);
         gambar.setImageResource(R.drawable.img1);

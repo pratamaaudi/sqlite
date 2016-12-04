@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ public class cart extends AppCompatActivity {
     ListView list;
 
     DatabaseHelperImport database;
+    Cursor cur;
+
+    TextView txtid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,7 @@ public class cart extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         database = new DatabaseHelperImport(this);
-        Cursor cur = database.ambilsemuadata();
+        cur = database.ambilsemuadata();
         if(cur.getCount() == 0){
             Toast.makeText(cart.this,"Tidak ada data dalam database",Toast.LENGTH_LONG).show();
         } else {
@@ -45,9 +50,9 @@ public class cart extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                Toast.makeText(getApplicationContext(), "item ke "+(i+1),Toast.LENGTH_LONG).show();
+                cur.moveToPosition(i);
+                String curid = cur.getString(0);
             }
         });
-
         }
     }
