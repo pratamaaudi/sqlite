@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper database;
-    EditText edtnama, edtgambar, edtharga;
+    EditText edtnama, edtharga;
     Button btntambah, btnview, btncheckout;
 
 
@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         database = new DatabaseHelper(this);
 
         edtnama = (EditText)findViewById(R.id.edtnama);
-        edtgambar = (EditText)findViewById(R.id.edtgambar);
         btntambah = (Button) findViewById(R.id.btntambah);
         btnview = (Button) findViewById(R.id.btnview);
         edtharga = (EditText) findViewById(R.id.edtharga);
@@ -31,12 +30,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
    public void tambahdata(View view){
-        boolean isInserted = database.insert(edtnama.getText().toString(),
-                edtgambar.getText().toString(), Integer.parseInt(edtharga.getText().toString())  );
+        boolean isInserted = database.insert(edtnama.getText().toString(), Integer.parseInt(edtharga.getText().toString())  );
         if(isInserted == true){
             Toast.makeText(MainActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
             edtnama.setText("");
-            edtgambar.setText("");
             edtharga.setText("");
         } else
             Toast.makeText(MainActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
@@ -52,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
             while (cur.moveToNext()){
                 buffer.append("ID : " + cur.getString(0)+"\n");
                 buffer.append("NAMA : " + cur.getString(1)+"\n");
-                buffer.append("GAMBAR : " + cur.getString(2)+"\n");
-                buffer.append("HARGA : " + cur.getString(3)+"\n\n");
+                buffer.append("HARGA : " + cur.getString(2)+"\n\n");
                 totaldata++;
             }
             buffer.append("TOTAL DATA : "+totaldata);

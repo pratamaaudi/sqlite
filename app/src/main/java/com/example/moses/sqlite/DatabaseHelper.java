@@ -11,12 +11,11 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String NAMA_DATABASE = "Jam2.db";
+    public static final String NAMA_DATABASE = "Jam3.db";
     public static final String NAMA_TABEL = "katalog";
     public static final String KOL_1 = "id";
     public static final String KOL_2 = "nama";
-    public static final String KOL_3 = "gambar";
-    public static final String KOL_4 = "harga";
+    public static final String KOL_3 = "harga";
 
     public DatabaseHelper(Context context) {
         super(context, NAMA_DATABASE, null, 1);
@@ -24,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + NAMA_TABEL + "(id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, gambar TEXT, harga INTEGER)");
+        sqLiteDatabase.execSQL("create table " + NAMA_TABEL + "(id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, harga INTEGER)");
     }
 
     @Override
@@ -33,12 +32,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean insert(String nama, String gambar, int harga){
+    public boolean insert(String nama, int harga){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues inputan = new ContentValues();
         inputan.put(KOL_2,nama);
-        inputan.put(KOL_3,gambar);
-        inputan.put(KOL_4,harga);
+        inputan.put(KOL_3,harga);
         long hasil = sqLiteDatabase.insert(NAMA_TABEL,null,inputan);
         if(hasil==-1){
             return false;

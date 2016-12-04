@@ -10,11 +10,32 @@
         android:layout_height="100dp"
         android:layout_margin="10dp" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text"
-        android:layout_weight="1" />
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtid"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtnama"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtharga"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

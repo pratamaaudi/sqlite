@@ -29,16 +29,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/edtgambar"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/edtnama"
-        android:layout_alignStart="@+id/edtnama" />
-
     <TextView
         android:text="Harga"
         android:layout_width="wrap_content"
@@ -46,15 +36,6 @@
         android:id="@+id/txtharga"
         android:layout_alignBaseline="@+id/edtharga"
         android:layout_alignBottom="@+id/edtharga"
-        android:layout_alignStart="@+id/txtnama" />
-
-    <TextView
-        android:text="Gambar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtgambar"
-        android:layout_alignBaseline="@+id/edtgambar"
-        android:layout_alignBottom="@+id/edtgambar"
         android:layout_alignStart="@+id/txtnama" />
 
     <Button
@@ -86,16 +67,6 @@
         android:layout_marginStart="35dp"
         android:id="@+id/btnupdate" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/edtharga"
-        android:layout_below="@+id/edtgambar"
-        android:layout_alignStart="@+id/edtgambar" />
-
     <Button
         android:text="Check Out"
         android:layout_width="wrap_content"
@@ -106,4 +77,14 @@
         android:layout_alignStart="@+id/btnview"
         android:layout_toStartOf="@+id/btnupdate"
         android:onClick="checkout"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="34dp"
+        android:id="@+id/edtharga"
+        android:layout_below="@+id/edtnama"
+        android:layout_alignStart="@+id/edtnama" />
 </RelativeLayout>

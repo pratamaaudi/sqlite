@@ -12,7 +12,9 @@ import java.util.ArrayList;
 
 public class cart extends AppCompatActivity {
 
-    private ArrayList<String> items = new ArrayList<>();
+    private ArrayList<String> pid = new ArrayList<>();
+    private ArrayList<String> nama = new ArrayList<>();
+    private ArrayList<String> harga = new ArrayList<>();
     private int[] img={R.drawable.img1,R.drawable.img2,R.drawable.img3};
     ListView list;
 
@@ -29,13 +31,15 @@ public class cart extends AppCompatActivity {
             Toast.makeText(cart.this,"Tidak ada data dalam database",Toast.LENGTH_LONG).show();
         } else {
             while (cur.moveToNext()){
-                items.add(cur.getString(0));
+                pid.add(cur.getString(0));
+                nama.add(cur.getString(1));
+                harga.add(cur.getString(2));
             }
         }
 
 
         list = (ListView) findViewById(R.id.list);
-        list.setAdapter(new CustomAdapter(this,items,img));
+        list.setAdapter(new CustomAdapter(this,pid,nama,harga,img));
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
