@@ -32,23 +32,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean insert(String nama, int harga){
+    public boolean insert(String nama, int harga) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues inputan = new ContentValues();
-        inputan.put(KOL_2,nama);
-        inputan.put(KOL_3,harga);
-        long hasil = sqLiteDatabase.insert(NAMA_TABEL,null,inputan);
-        if(hasil==-1){
+        inputan.put(KOL_2, nama);
+        inputan.put(KOL_3, harga);
+        long hasil = sqLiteDatabase.insert(NAMA_TABEL, null, inputan);
+        if (hasil == -1) {
             return false;
         } else {
             return true;
         }
     }
 
-    public Cursor ambilsemuadata(){
+    public Cursor ambilsemuadata() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cur = sqLiteDatabase.rawQuery("SELECT * FROM "+NAMA_TABEL, null);
-        return  cur;
+        Cursor cur = sqLiteDatabase.rawQuery("SELECT * FROM " + NAMA_TABEL, null);
+        return cur;
     }
 
 

@@ -18,14 +18,14 @@ public class cart extends AppCompatActivity {
     private int[] img={R.drawable.img1,R.drawable.img2,R.drawable.img3};
     ListView list;
 
-    DatabaseHelper database;
+    DatabaseHelperImport database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        database = new DatabaseHelper(this);
+        database = new DatabaseHelperImport(this);
         Cursor cur = database.ambilsemuadata();
         if(cur.getCount() == 0){
             Toast.makeText(cart.this,"Tidak ada data dalam database",Toast.LENGTH_LONG).show();
