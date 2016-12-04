@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.moses.sqlite.MainActivity">
+
+    <TextView
+        android:text="Nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtnama"
+        android:layout_alignBaseline="@+id/edtnama"
+        android:layout_alignBottom="@+id/edtnama"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtnama"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtgambar"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/edtnama"
+        android:layout_alignStart="@+id/edtnama" />
+
+    <TextView
+        android:text="Harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtharga"
+        android:layout_alignBaseline="@+id/edtharga"
+        android:layout_alignBottom="@+id/edtharga"
+        android:layout_alignStart="@+id/txtnama" />
+
+    <TextView
+        android:text="Gambar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtgambar"
+        android:layout_alignBaseline="@+id/edtgambar"
+        android:layout_alignBottom="@+id/edtgambar"
+        android:layout_alignStart="@+id/txtnama" />
+
+    <Button
+        android:text="ADD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtharga"
+        android:layout_alignStart="@+id/txtharga"
+        android:layout_marginTop="39dp"
+        android:onClick="tambahdata"
+        android:id="@+id/btntambah" />
+
+    <Button
+        android:text="Cek Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btntambah"
+        android:layout_toEndOf="@+id/btntambah"
+        android:layout_marginStart="24dp"
+        android:onClick="ambildata"
+        android:id="@+id/btnview" />
+
+    <Button
+        android:text="UPDATE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnview"
+        android:layout_toEndOf="@+id/btnview"
+        android:layout_marginStart="35dp"
+        android:id="@+id/btnupdate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="25dp"
+        android:id="@+id/edtharga"
+        android:layout_below="@+id/edtgambar"
+        android:layout_alignStart="@+id/edtgambar" />
+
+    <Button
+        android:text="Check Out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btncart"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/btnview"
+        android:layout_alignStart="@+id/btnview"
+        android:layout_toStartOf="@+id/btnupdate"
+        android:onClick="checkout"/>
+</RelativeLayout>
